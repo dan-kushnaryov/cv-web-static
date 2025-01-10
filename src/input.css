@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.skill {
+    @apply flex flex-col gap-0.5 rounded-lg items-center hover:scale-110 transition-transform duration-500 bg-slate-900/60 p-3 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/70 hover:bg-slate-900/100 text-sm font-semibold;
+}
+
+.skill-icon {
+    @apply w-10 h-10 mb-2 opacity-75 group-hover:opacity-100 transition-opacity duration-500;
+}
+
+.language {
+    @apply flex flex-col items-center justify-center p-1 font-bold;
+}
