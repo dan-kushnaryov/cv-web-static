@@ -35,9 +35,21 @@
 }
 
 .fixed-title-container {
-    @apply fixed left-0 top-0 p-2 z-10 bg-gradient-to-tr from-gray-900 to-teal-950/95 w-full text-2xl shadow-md shadow-teal-900/50;
+    @apply fixed left-0 top-0 pt-2 pb-2 pl-4 z-10 border-b border-dotted border-teal-600/60 bg-gradient-to-r from-gray-900/95 to-teal-800/95 w-full shadow-md shadow-gray-950/50;
+}
+
+.fixed-title-container > h1 {
+    @apply text-xl text-gray-200;
+}
+
+.fixed-title-container > svg {
+    @apply w-7 h-7;
 }
 
 .fixed-title-container svg {
     animation: bounce 0.7s ease-out;
+}
+
+.timeline-point {
+    @apply absolute left-[-9px] w-4 h-4 bg-teal-400 rounded-full border-2 border-gray-900;
 }
