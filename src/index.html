@@ -389,8 +389,10 @@
                     <!--                    <div class="border-t border-gray-700 my-6"></div>-->
                     <p>
                         While my expertise is backend-oriented, I’ve also expanded into UI development with <span
-                            class="text-teal-400">React</span>, <span class="text-teal-400">Redux</span>, and modern CSS
-                        techniques (<span class="text-teal-400">Flexbox</span>, <span class="text-teal-400">Grid</span>,
+                            class="text-teal-400">React</span>, <span class="text-teal-400">Redux</span>, <span
+                            class="text-teal-400">Redux Toolkit</span>
+                        and modern CSS techniques (<span class="text-teal-400">Flexbox</span>, <span
+                            class="text-teal-400">Grid</span>,
                         <span class="text-teal-400">Tailwind CSS</span>).
                     </p>
                     <div class="border-t border-gray-700 my-6"></div>
@@ -427,57 +429,140 @@
 
                 <!-- Projects -->
                 <div class="content-block !px-0">
-                    <h1 class="text-2xl font-bold text-white ml-6">Some of the Projects</h1>
-                    <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
+                    <h1 class="text-2xl font-bold text-white ml-6">Featured Projects</h1>
+                    <div id="accordion-color" data-accordion="collapse"
+                         data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
                         <h2 id="accordion-color-heading-1">
-                            <button type="button" class="project-menu-item-button" data-accordion-target="#accordion-color-body-1" aria-expanded="true" aria-controls="accordion-color-body-1">
-                                <span>Advanced Real Estate Search Portal</span>
-                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            <button type="button" class="project-menu-item-button"
+                                    data-accordion-target="#accordion-color-body-1" aria-expanded="true"
+                                    aria-controls="accordion-color-body-1">
+                                <span>Fintech Payment Orchestrator</span>
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2" d="M9 5 5 1 1 5"/>
                                 </svg>
                             </button>
                         </h2>
                         <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
                             <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-                                <h2 class="text-xl font-bold text-white mb-5">Description</h2>
+                                <h2 class="text-xl font-bold text-white mb-5">Project Overview</h2>
                                 <p>
-                                    The website is designed to offer end-users a comprehensive range of real estate properties, supported by robust filtering and search functionalities.
-                                    It includes email notifications for significant updates, such as new listings, and integrates seamlessly with <span class="text-teal-400">Google Maps</span> for enhanced usability.
-                                    Hosted on <span class="text-teal-400">AWS</span> using a microservices architecture, the platform leverages services like
-                                    <span class="text-teal-400">EC2</span>, <span class="text-teal-400">RDS for PostgreSQL</span>, <span class="text-teal-400">S3</span>,
-                                    <span class="text-teal-400">SQS/SNS</span>, <span class="text-teal-400">Cognito</span>, <span class="text-teal-400">Elasticsearch</span>, and
-                                    <span class="text-teal-400">Lambda</span>.
-                                    Additionally, the site is integrated with <span class="text-teal-400">Salesforce CRM</span> through its API, enabling efficient synchronization of users between the website and the CRM platform.
+                                    A modern fintech payment orchestrator, hosted on <span
+                                        class="text-teal-400">AWS</span>, integrates multiple payment service providers
+                                    into one unified system. This platform ensures high security, scalability, and
+                                    performance while streamlining transaction flows and managing compliance. Built with
+                                    <span class="text-teal-400">Node.js</span>, <span
+                                        class="text-teal-400">TypeScript</span>, <span
+                                        class="text-teal-400">NestJS</span>, and using <span class="text-teal-400">MongoDB</span>
+                                    and <span class="text-teal-400">PostgreSQL</span> for storage, the system is
+                                    containerized with <span class="text-teal-400">Docker</span> and orchestrated using
+                                    <span class="text-teal-400">Kubernetes</span>. For CI/CD, <span
+                                        class="text-teal-400">GitLab CI</span> is employed, while <span
+                                        class="text-teal-400">ActiveMQ</span> and <span
+                                        class="text-teal-400">NewRelic</span> handle messaging and monitoring.
                                 </p>
                                 <div class="border-t border-gray-700 my-6"></div>
 
                                 <h2 class="text-xl font-bold text-white mb-5">Responsibilities</h2>
                                 <ul class="common-list">
-                                    <li>Collaborating with the development team to deliver high-quality solutions</li>
-                                    <li>Implementing server-side functionality</li>
-                                    <li>Designing the database architecture</li>
-                                    <li>Structuring and developing microservices</li>
-                                    <li>Conducting code refactoring and optimizing application performance</li>
-                                    <li>Performing code reviews</li>
-                                    <li>Managing builds and deployments in coordination with DevOps teams</li>
-                                    <li>Providing effort estimates for tasks and features</li>
-                                    <li>Engaging with the customer for feedback, conducting demos, and ensuring alignment</li>
-                                    <li>Maintaining and supporting existing functionality through bug fixes</li>
-                                    <li>Writing unit and integration tests to ensure reliability</li>
-                                    <li>Adhering to Scrum standards and participating in Agile practices</li>
+                                    <li>Enhancing security and performance</li>
+                                    <li>Optimizing system efficiency</li>
+                                    <li>Refactoring legacy code for modernization</li>
+                                    <li>Collaborating with cross-functional teams</li>
+                                    <li>Developing server-side functionality</li>
+                                    <li>Code performance optimization</li>
+                                    <li>Conducting code reviews</li>
+                                    <li>Managing builds, deployments, and collaborating with DevOps</li>
+                                    <li>Estimating tasks and project efforts</li>
+                                    <li>Providing support for existing functionalities and bug fixes</li>
+                                    <li>Writing unit and integration tests</li>
+                                    <li>Adhering to Scrum practices</li>
                                 </ul>
                                 <div class="border-t border-gray-700 my-6"></div>
 
                                 <h2 class="text-xl font-bold text-white mb-5">Tools & Technologies</h2>
                                 <ul class="common-list">
-                                    <li><span class="font-semibold">Backend:</span> Node.js, TypeScript, InversifyJS, TypeORM</li>
+                                    <li><span class="font-semibold">Backend:</span> Node.js, TypeScript, NestJS</li>
+                                    <li><span class="font-semibold">Databases:</span> MongoDB, PostgreSQL</li>
+                                    <li><span class="font-semibold">CI/CD & Version Control:</span> GitLab, GitLab CI
+                                    </li>
+                                    <li><span class="font-semibold">ORM & ODM:</span> TypeORM, Mongoose</li>
+                                    <li><span class="font-semibold">Testing Frameworks:</span> Mocha, Chai, Jest</li>
+                                    <li><span class="font-semibold">Containerization & Orchestration:</span> Docker,
+                                        Kubernetes
+                                    </li>
+                                    <li><span class="font-semibold">Messaging & Monitoring:</span> ActiveMQ, NewRelic
+                                    </li>
+                                </ul>
+                                <div class="border-t border-gray-700 my-6"></div>
+
+                                <ul class="common-list !list-none">
+                                    <li><span class="font-semibold">Project Role:</span> Senior Software Engineer</li>
+                                    <li><span class="font-semibold">Project Team Size:</span> 7 members (sub-team)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2 id="accordion-color-heading-2">
+                            <button type="button" class="project-menu-item-button"
+                                    data-accordion-target="#accordion-color-body-2" aria-expanded="true"
+                                    aria-controls="accordion-color-body-2">
+                                <span>Advanced Real Estate Search Portal</span>
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2" d="M9 5 5 1 1 5"/>
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+                            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                                <h2 class="text-xl font-bold text-white mb-5">Project Overview</h2>
+                                <p>
+                                    This portal offers users a wide selection of real estate properties with powerful
+                                    search and filtering capabilities. It includes email notifications for new listings
+                                    and integrates with <span class="text-teal-400">Google Maps</span> for an enhanced
+                                    user experience. Hosted on <span class="text-teal-400">AWS</span>, the system uses a
+                                    microservices architecture, incorporating services like <span class="text-teal-400">EC2</span>,
+                                    <span class="text-teal-400">RDS for PostgreSQL</span>, <span class="text-teal-400">S3</span>,
+                                    <span class="text-teal-400">SQS/SNS</span>, <span
+                                        class="text-teal-400">Cognito</span>, <span
+                                        class="text-teal-400">Elasticsearch</span>, and <span class="text-teal-400">Lambda</span>.
+                                    Integration with <span class="text-teal-400">Salesforce CRM</span> ensures efficient
+                                    user synchronization between the website and CRM.
+                                </p>
+                                <div class="border-t border-gray-700 my-6"></div>
+
+                                <h2 class="text-xl font-bold text-white mb-5">Responsibilities</h2>
+                                <ul class="common-list">
+                                    <li>Collaborating with development teams to ensure high-quality solutions</li>
+                                    <li>Designing and implementing server-side functionality</li>
+                                    <li>Architecting and developing microservices</li>
+                                    <li>Refactoring code to enhance performance</li>
+                                    <li>Performing code reviews</li>
+                                    <li>Managing builds and deployments with DevOps</li>
+                                    <li>Providing effort estimates for tasks and features</li>
+                                    <li>Engaging with customers, conducting demos, and gathering feedback</li>
+                                    <li>Maintaining functionality through bug fixes</li>
+                                    <li>Writing unit and integration tests</li>
+                                    <li>Following Scrum standards in Agile processes</li>
+                                </ul>
+                                <div class="border-t border-gray-700 my-6"></div>
+
+                                <h2 class="text-xl font-bold text-white mb-5">Tools & Technologies</h2>
+                                <ul class="common-list">
+                                    <li><span class="font-semibold">Backend:</span> Node.js, TypeScript, InversifyJS,
+                                        TypeORM
+                                    </li>
                                     <li><span class="font-semibold">Testing:</span> Mocha, Chai, Sinon</li>
                                     <li><span class="font-semibold">DevOps:</span> Jenkins, Docker, Docker Compose</li>
                                     <li><span class="font-semibold">Database:</span> PostgreSQL</li>
-                                    <li><span class="font-semibold">AWS Services:</span> EC2, S3, SQS/SNS, Lambda, Elasticsearch, CloudWatch, Cognito</li>
+                                    <li><span class="font-semibold">AWS Services:</span> EC2, S3, SQS/SNS, Lambda,
+                                        Elasticsearch, CloudWatch, Cognito
+                                    </li>
                                     <li><span class="font-semibold">CRM Integration:</span> Apex for Salesforce API</li>
                                 </ul>
-
                                 <div class="border-t border-gray-700 my-6"></div>
 
                                 <ul class="common-list !list-none">
@@ -487,152 +572,235 @@
                                 </ul>
                             </div>
                         </div>
-                        <h2 id="accordion-color-heading-2">
-                            <button type="button" class="project-menu-item-button" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
-                                <span>Corporate Merger Management System</span>
-                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                                </svg>
-                            </button>
-                        </h2>
-                        <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
-                            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-                                <h2 class="text-xl font-bold text-white mb-5">Description</h2>
-                                <p>
-                                    The project involves the development of a private corporate system designed to streamline the merger process for companies or organizations.
-                                    The system provides a clear, consolidated workflow for merging, tracks the status of each stage with predefined steps, and delivers data visualization through various charts.
-                                    It also includes automated alerts for upcoming events and deadlines, ensuring timely completion of tasks.
-                                </p>
-                                <div class="border-t border-gray-700 my-6"></div>
 
-                                <h2 class="text-xl font-bold text-white mb-5">Responsibilities</h2>
-                                <ul class="common-list">
-                                    <li>Leading a team of four backend engineers, ensuring effective collaboration and productivity</li>
-                                    <li>Collaborating with the customer and business analyst to gather, refine, and document requirements</li>
-                                    <li>Developing backend functionality to meet project specifications</li>
-                                    <li>Designing a robust and scalable database structure</li>
-                                    <li>Implementing and managing the authorization flow</li>
-                                    <li>Establishing the project foundation by preparing its skeleton and initial architecture</li>
-                                    <li>Conducting code refactoring to improve maintainability and performance</li>
-                                    <li>Performing thorough code reviews to ensure quality standards</li>
-                                    <li>Coordinating with DevOps to manage builds and deployments efficiently</li>
-                                    <li>Providing accurate effort estimations for features and tasks</li>
-                                </ul>
-                                <div class="border-t border-gray-700 my-6"></div>
-
-                                <h2 class="text-xl font-bold text-white mb-5">Tools & Technologies</h2>
-                                <ul class="common-list">
-                                    <li><span class="font-semibold">Backend:</span> Node.js, TypeScript, Hapi, Sequelize</li>
-                                    <li><span class="font-semibold">Database:</span> PostgreSQL</li>
-                                    <li><span class="font-semibold">DevOps:</span> CircleCI, Kubernetes, Docker, Docker Compose</li>
-                                    <li><span class="font-semibold">AWS Services:</span> S3, SQS/SNS</li>
-                                </ul>
-
-                                <div class="border-t border-gray-700 my-6"></div>
-
-                                <ul class="common-list !list-none">
-                                    <li><span class="font-semibold">Customer:</span> A US-based company</li>
-                                    <li><span class="font-semibold">Project Role:</span> Team Lead / Senior Software Engineer</li>
-                                    <li><span class="font-semibold">Project Team Size:</span> 12 members</li>
-                                </ul>
-                            </div>
-                        </div>
                         <h2 id="accordion-color-heading-3">
-                            <button type="button" class="project-menu-item-button !border-b" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
-                                <span>Course Publishing Dashboard for Online Education</span>
-                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            <button type="button" class="project-menu-item-button"
+                                    data-accordion-target="#accordion-color-body-3" aria-expanded="false"
+                                    aria-controls="accordion-color-body-3">
+                                <span>Corporate Merger Management System</span>
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2" d="M9 5 5 1 1 5"/>
                                 </svg>
                             </button>
                         </h2>
                         <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
                             <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-                                <h2 class="text-xl font-bold text-white mb-5">Description</h2>
+                                <h2 class="text-xl font-bold text-white mb-5">Project Overview</h2>
                                 <p>
-                                    The project was developed for the world’s largest online tech and creative library, offering immediate access to over 5,000 training courses with new content added daily.
-                                    The platform caters to developers, IT administrators, and creative professionals, delivering knowledge through courses presented by renowned industry experts.
-                                </p>
-                                <p>
-                                    The system is built with multiple bounded contexts that communicate via RabbitMQ and internal APIs. Each context handles specific sub-projects and responsibilities.
-                                    My primary focus was on the context responsible for publishing courses. This includes a dashboard for the publication team, enabling efficient management of course metadata, creation of modules, uploading of clips and assets, status management, and course publication.
-                                </p>
-                                <p>
-                                    The architecture includes multiple microservices written in Node.js and PHP, with integrations to third-party services such as AWS, Dropbox, Slack, Pusher, and RabbitMQ.
+                                    The Corporate Merger Management System (CMMS) is a private, enterprise-level
+                                    platform designed to simplify and streamline the process of corporate mergers. The
+                                    system provides a centralized workflow, allowing organizations to efficiently manage
+                                    the stages of the merger, from initiation to completion. It features a detailed
+                                    tracking system, pre-configured steps, and intuitive data visualizations through
+                                    various charts and graphs. The platform also integrates automated alerts for key
+                                    dates, events, and deadlines to ensure timely and successful merger execution.
                                 </p>
                                 <div class="border-t border-gray-700 my-6"></div>
 
                                 <h2 class="text-xl font-bold text-white mb-5">Responsibilities</h2>
                                 <ul class="common-list">
-                                    <li>Leading and mentoring a team of three engineers to ensure high-quality deliverables</li>
-                                    <li>Collaborating with the customer to gather, clarify, and document requirements</li>
-                                    <li>Designing the system’s architecture and breaking tasks into manageable components</li>
-                                    <li>Developing and maintaining core components of the application</li>
-                                    <li>Communicating with the onsite team and customers to align on objectives</li>
-                                    <li>Implementing server-side functionality</li>
-                                    <li>Creating and maintaining detailed project documentation</li>
-                                    <li>Performing code refactoring to enhance performance and maintainability</li>
-                                    <li>Writing and maintaining unit and integration tests</li>
-                                    <li>Conducting pull request reviews to uphold quality standards</li>
-                                    <li>Managing builds and deployments</li>
-                                    <li>Conducting interviews to expand the team with qualified candidates</li>
+                                    <li>Leading a team of four backend engineers, ensuring seamless collaboration and
+                                        high productivity
+                                    </li>
+                                    <li>Working closely with the customer and business analysts to gather, refine, and
+                                        document requirements
+                                    </li>
+                                    <li>Developing and optimizing backend functionality to align with project
+                                        specifications
+                                    </li>
+                                    <li>Designing and implementing a scalable, high-performance database architecture
+                                    </li>
+                                    <li>Managing user authentication and authorization processes</li>
+                                    <li>Establishing the initial architecture and framework for the project</li>
+                                    <li>Refactoring existing code to enhance maintainability, scalability, and
+                                        performance
+                                    </li>
+                                    <li>Performing rigorous code reviews to maintain quality standards and best
+                                        practices
+                                    </li>
+                                    <li>Collaborating with the DevOps team to manage build, deployment, and CI/CD
+                                        pipelines
+                                    </li>
+                                    <li>Providing accurate estimations for project features, tasks, and overall
+                                        timelines
+                                    </li>
                                 </ul>
                                 <div class="border-t border-gray-700 my-6"></div>
 
                                 <h2 class="text-xl font-bold text-white mb-5">Tools & Technologies</h2>
                                 <ul class="common-list">
-                                    <li><span class="font-semibold">Backend:</span> Node.js (ES6, Promises, Async/Await), FeathersJS, Sequelize</li>
-                                    <li><span class="font-semibold">Testing:</span> Mocha, Chai, Sinon, Codeception, AspectMock</li>
-                                    <li><span class="font-semibold">Additional Technologies:</span> PHP, Yii2, Active Record, PostgreSQL</li>
-                                    <li><span class="font-semibold">3rd Party Integrations:</span> AWS, Dropbox, Slack, Pusher, RabbitMQ, AWS SQS/S3</li>
+                                    <li><span class="font-semibold">Backend:</span> Node.js, TypeScript, Hapi, Sequelize
+                                    </li>
+                                    <li><span class="font-semibold">Database:</span> PostgreSQL</li>
+                                    <li><span class="font-semibold">DevOps:</span> CircleCI, Kubernetes, Docker, Docker
+                                        Compose
+                                    </li>
+                                    <li><span class="font-semibold">Cloud & Messaging:</span> AWS (S3, SQS/SNS)</li>
                                 </ul>
 
                                 <div class="border-t border-gray-700 my-6"></div>
 
                                 <ul class="common-list !list-none">
-                                    <li><span class="font-semibold">Customer:</span> A US-based company</li>
-                                    <li><span class="font-semibold">Project Role:</span> Team Lead / Software Engineer</li>
-                                    <li><span class="font-semibold">Project Team Size:</span> 14 members</li>
+                                    <li><span class="font-semibold">Customer:</span> US-based company specializing in
+                                        corporate mergers
+                                    </li>
+                                    <li><span class="font-semibold">Project Role:</span> Team Lead / Senior Software
+                                        Engineer
+                                    </li>
+                                    <li><span class="font-semibold">Project Team Size:</span> 12 team members</li>
                                 </ul>
                             </div>
                         </div>
+
                         <h2 id="accordion-color-heading-4">
-                            <button type="button" class="project-menu-item-button !border-b" data-accordion-target="#accordion-color-body-4" aria-expanded="false" aria-controls="accordion-color-body-4">
-                                <span>Oil Market Insights Platform</span>
-                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            <button type="button" class="project-menu-item-button !border-b"
+                                    data-accordion-target="#accordion-color-body-4" aria-expanded="false"
+                                    aria-controls="accordion-color-body-4">
+                                <span class="text-left">Course Publishing Dashboard for Online Education</span>
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2" d="M9 5 5 1 1 5"/>
                                 </svg>
                             </button>
                         </h2>
                         <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
                             <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-                                <h2 class="text-xl font-bold text-white mb-5">Description</h2>
+                                <h2 class="text-xl font-bold text-white mb-5">Project Overview</h2>
                                 <p>
-                                    The project is a private and advanced system designed to help companies analyze the oil market effectively.
-                                    It integrates with a private API that generates extensive news, alerts, and data. The system visualizes this data using interactive graphs
-                                    and presents the news in a user-friendly feed format. Additionally, it features online chat functionality for users and companies, facilitating seamless communication.
+                                    This project was developed for the world’s largest online tech and creative library,
+                                    offering instant access to over 5,000 training courses, with new content added
+                                    daily. The platform serves developers, IT administrators, and creative
+                                    professionals, providing training delivered by renowned industry experts.
+                                </p>
+                                <p>
+                                    The system architecture employs multiple bounded contexts communicating through
+                                    RabbitMQ and internal APIs. Each context manages specific sub-projects and
+                                    responsibilities. My primary focus was the context responsible for course
+                                    publishing. This includes a dashboard designed for the publication team to
+                                    efficiently manage course metadata, create modules, upload media files, and handle
+                                    course status and publication.
+                                </p>
+                                <p>
+                                    The architecture incorporates microservices written in Node.js and PHP, integrating
+                                    third-party services such as AWS, Dropbox, Slack, Pusher, and RabbitMQ.
                                 </p>
                                 <div class="border-t border-gray-700 my-6"></div>
 
                                 <h2 class="text-xl font-bold text-white mb-5">Responsibilities</h2>
                                 <ul class="common-list">
-                                    <li>Developing backend functionality to support core features</li>
-                                    <li>Building and enhancing UI components for an intuitive user experience</li>
-                                    <li>Writing and maintaining unit tests to ensure code quality and reliability</li>
-                                    <li>Improving the system's architecture and conducting code refactoring for better maintainability</li>
-                                    <li>Creating custom NPM and BASH scripts to automate processes for the CI server</li>
-                                    <li>Setting up and maintaining a development environment using Vagrant</li>
-                                    <li>Conducting software design, research, and analysis to refine system functionality</li>
+                                    <li>Leading and mentoring a team of three engineers to ensure high-quality
+                                        deliverables
+                                    </li>
+                                    <li>Collaborating with customers to gather, clarify, and document requirements</li>
+                                    <li>Designing the system architecture and breaking tasks into manageable
+                                        components
+                                    </li>
+                                    <li>Developing and maintaining core system components</li>
+                                    <li>Coordinating with the onsite team and clients to ensure alignment on project
+                                        goals
+                                    </li>
+                                    <li>Implementing server-side functionality for the course publishing workflow</li>
+                                    <li>Creating and maintaining detailed technical documentation</li>
+                                    <li>Refactoring code to enhance performance and maintainability</li>
+                                    <li>Writing and maintaining unit and integration tests</li>
+                                    <li>Conducting code reviews to uphold high-quality standards</li>
+                                    <li>Managing build and deployment pipelines</li>
+                                    <li>Participating in interviews to expand the team with qualified engineers</li>
                                 </ul>
                                 <div class="border-t border-gray-700 my-6"></div>
 
                                 <h2 class="text-xl font-bold text-white mb-5">Tools & Technologies</h2>
                                 <ul class="common-list">
-                                    <li><span class="font-semibold">Backend:</span> Node.js, PHP (Express, Phalcon, SlimPHP)</li>
-                                    <li><span class="font-semibold">Frontend:</span> JavaScript, Ajax, HTML, CSS, JSON, XML, Bootstrap, Stylus</li>
+                                    <li><span class="font-semibold">Backend:</span> Node.js (ES6, Promises,
+                                        Async/Await), FeathersJS, Sequelize
+                                    </li>
+                                    <li><span class="font-semibold">Testing:</span> Mocha, Chai, Sinon, Codeception,
+                                        AspectMock
+                                    </li>
+                                    <li><span class="font-semibold">Additional Technologies:</span> PHP, Yii2, Active
+                                        Record, PostgreSQL
+                                    </li>
+                                    <li><span class="font-semibold">Third-party Integrations:</span> AWS, Dropbox,
+                                        Slack, Pusher, RabbitMQ, AWS SQS/S3
+                                    </li>
+                                </ul>
+
+                                <div class="border-t border-gray-700 my-6"></div>
+
+                                <ul class="common-list !list-none">
+                                    <li><span class="font-semibold">Customer:</span> US-based company specializing in
+                                        online education
+                                    </li>
+                                    <li><span class="font-semibold">Project Role:</span> Team Lead / Software Engineer
+                                    </li>
+                                    <li><span class="font-semibold">Project Team Size:</span> 14 members</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2 id="accordion-color-heading-5">
+                            <button type="button" class="project-menu-item-button !border-b"
+                                    data-accordion-target="#accordion-color-body-5" aria-expanded="false"
+                                    aria-controls="accordion-color-body-5">
+                                <span>Oil Market Insights Platform</span>
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2" d="M9 5 5 1 1 5"/>
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-color-body-5" class="hidden" aria-labelledby="accordion-color-heading-5">
+                            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                                <h2 class="text-xl font-bold text-white mb-5">Project Overview</h2>
+                                <p>
+                                    The Oil Market Insights Platform is an advanced system developed to assist companies
+                                    in analyzing the oil market effectively. The platform integrates with a private API
+                                    to generate extensive news, alerts, and data, which is visualized through
+                                    interactive graphs and presented in a user-friendly feed format.
+                                </p>
+                                <p>
+                                    Additionally, the system offers an online chat feature, allowing seamless
+                                    communication between users and companies. This functionality enhances user
+                                    experience by providing real-time collaboration and data sharing.
+                                </p>
+                                <div class="border-t border-gray-700 my-6"></div>
+
+                                <h2 class="text-xl font-bold text-white mb-5">Responsibilities</h2>
+                                <ul class="common-list">
+                                    <li>Developing backend functionality to support core system features</li>
+                                    <li>Building and enhancing UI components for improved user experience</li>
+                                    <li>Writing and maintaining unit tests to ensure code reliability</li>
+                                    <li>Refactoring and optimizing the system's architecture for better performance and
+                                        maintainability
+                                    </li>
+                                    <li>Creating custom NPM and BASH scripts to automate CI server processes</li>
+                                    <li>Setting up and maintaining a development environment using Vagrant</li>
+                                    <li>Conducting software design, research, and analysis to improve system
+                                        functionality
+                                    </li>
+                                </ul>
+                                <div class="border-t border-gray-700 my-6"></div>
+
+                                <h2 class="text-xl font-bold text-white mb-5">Tools & Technologies</h2>
+                                <ul class="common-list">
+                                    <li><span class="font-semibold">Backend:</span> Node.js, PHP (Express, Phalcon,
+                                        SlimPHP)
+                                    </li>
+                                    <li><span class="font-semibold">Frontend:</span> JavaScript, Ajax, HTML, CSS, JSON,
+                                        XML, Bootstrap, Stylus
+                                    </li>
                                     <li><span class="font-semibold">Build Tools:</span> Grunt</li>
-                                    <li><span class="font-semibold">Testing:</span> PHPUnit, Mocha, Chai, Phantom.js</li>
-                                    <li><span class="font-semibold">Frameworks and Libraries:</span> Require.js, Backbone.js, Lodash.js</li>
-                                    <li><span class="font-semibold">Development Environment:</span> Vagrant, Chef-Solo</li>
+                                    <li><span class="font-semibold">Testing:</span> PHPUnit, Mocha, Chai, Phantom.js
+                                    </li>
+                                    <li><span class="font-semibold">Frameworks and Libraries:</span> Require.js,
+                                        Backbone.js, Lodash.js
+                                    </li>
+                                    <li><span class="font-semibold">Development Environment:</span> Vagrant, Chef-Solo
+                                    </li>
                                     <li><span class="font-semibold">Database:</span> MySQL</li>
                                     <li><span class="font-semibold">Web Server:</span> Apache</li>
                                 </ul>
@@ -640,7 +808,9 @@
                                 <div class="border-t border-gray-700 my-6"></div>
 
                                 <ul class="common-list !list-none">
-                                    <li><span class="font-semibold">Customer:</span> A company based in Ukraine</li>
+                                    <li><span class="font-semibold">Customer:</span> Ukraine-based company specializing
+                                        in the oil market
+                                    </li>
                                     <li><span class="font-semibold">Project Role:</span> Software Engineer</li>
                                     <li><span class="font-semibold">Project Team Size:</span> 4 members</li>
                                 </ul>
@@ -681,13 +851,22 @@
                                 Remote
                             </div>
                             <p class="mt-2 text-gray-300">
-                                Working in a fintech company to enhance architecture and optimize existing solutions. As
-                                part of a team, I develop new features, maintain, and modernize legacy code. Tech stack
-                                includes <span class="text-teal-400">Node.js</span> and <span class="text-teal-400">TypeScript</span>.
-                                Actively involved in setting up <span class="text-teal-400">CI/CD</span> processes and
-                                improving the scalability, reliability, and security of microservice architecture.
-                                Working with <span class="text-teal-400">AWS</span>, <span class="text-teal-400">Kubernetes</span>,
-                                and monitoring tools like <span class="text-teal-400">New Relic</span>.
+                                Working as a <span class="font-bold">Senior Software Engineer</span> in a product-based
+                                company, contributing to the development of a modern fintech payment orchestrator hosted
+                                on <span class="text-teal-400">AWS</span>. Focused on enhancing security, performance,
+                                and optimizing system efficiency. Leading the effort in refactoring legacy code and
+                                modernizing the platform, working with <span class="text-teal-400">Node.js</span>, <span
+                                    class="text-teal-400">TypeScript</span>, and <span
+                                    class="text-teal-400">NestJS</span>. Actively involved in backend development,
+                                collaborating with cross-functional teams to deliver high-quality features. Working with
+                                <span class="text-teal-400">MongoDB</span> and <span
+                                    class="text-teal-400">PostgreSQL</span> for data storage, and utilizing <span
+                                    class="text-teal-400">Docker</span> and <span
+                                    class="text-teal-400">Kubernetes</span> for containerization and orchestration.
+                                Contributing to the setup and optimization of <span class="text-teal-400">CI/CD</span>
+                                pipelines with <span class="text-teal-400">GitLab CI</span>, and ensuring smooth
+                                messaging and monitoring through <span class="text-teal-400">ActiveMQ</span> and <span
+                                    class="text-teal-400">NewRelic</span>.
                             </p>
                         </li>
                         <!-- Timeline Item -->
@@ -717,18 +896,23 @@
                                 Kharkiv, Ukraine / Remote
                             </div>
                             <p class="mt-2 text-gray-300">
-                                Worked in an outsourcing IT company, participating in various projects ranging from
+                                Worked in a very large outsourcing IT company, participating in various projects ranging
+                                from
                                 small plugins to large-scale enterprise solutions. Actively developed in both <span
-                                    class="text-teal-400">Node.js</span> and <span
-                                    class="text-teal-400">TypeScript</span>, as well as <span
-                                    class="text-teal-400">PHP</span>. Gained experience working with multiple <span
-                                    class="text-teal-400">Node.js frameworks</span>. Served as a <span
-                                    class="font-bold">Tech Lead</span> on several projects, overseeing the development
-                                process and mentoring team members. Collaborated with distributed teams, and played an
-                                active role in communication with both clients and internal team members. Contributed to
-                                the setup and optimization of <span class="text-teal-400">CI/CD</span> processes. Worked
-                                in teams that strictly adhered to <span class="text-teal-400">Agile and Scrum</span>
-                                methodologies.
+                                    class="text-teal-400">Node.js</span>
+                                and <span class="text-teal-400">TypeScript</span>, as well as <span
+                                    class="text-teal-400">PHP</span>. Gained experience
+                                working with multiple <span class="text-teal-400">Node.js frameworks</span> such as
+                                <span class="text-teal-400">Feathers</span>,
+                                <span class="text-teal-400">Express</span>, and <span
+                                    class="text-teal-400">Inversify</span>. Served as a <span class="font-bold">Tech Lead</span>
+                                on several projects, overseeing the development process and mentoring team members.
+                                Collaborated with distributed teams, and
+                                played an active role in communication with both clients and internal team members.
+                                Contributed to the setup and optimization
+                                of <span class="text-teal-400">CI/CD</span> processes. Worked in teams that strictly
+                                adhered to <span class="text-teal-400">Agile</span>
+                                and <span class="text-teal-400">Scrum</span> methodologies.
                             </p>
                         </li>
                         <!-- Timeline Item -->
@@ -758,8 +942,16 @@
                                 Kharkiv, Ukraine
                             </div>
                             <p class="mt-2 text-gray-300">
-                                Led the development of scalable backend systems using <span class="text-teal-400">Node.js</span>
-                                and <span class="text-teal-400">TypeScript</span>.
+                                Worked in a product-based company, contributing to the development of the <span
+                                    class="text-teal-400">Oil Market Insights Platform</span> — an advanced system for
+                                analyzing the oil market. Focused on backend functionality in <span
+                                    class="text-teal-400">Node.js</span>, <span class="text-teal-400">PHP</span>, and
+                                <span class="text-teal-400">Phalcon Framework</span>, enhancing the user experience
+                                through
+                                <span class="text-teal-400">UI</span> improvements and building efficient integrations
+                                with third-party <span class="text-teal-400">APIs</span>. Played a key role in system
+                                optimization and <span class="text-teal-400">CI</span> automation, while collaborating
+                                with a small, cross-functional team to deliver high-quality features.
                             </p>
                         </li>
                         <!-- Timeline Item -->
@@ -789,9 +981,18 @@
                                 Kharkiv, Ukraine
                             </div>
                             <p class="mt-2 text-gray-300">
-                                Led the development of scalable backend systems using <span class="text-teal-400">Node.js</span>
-                                and <span class="text-teal-400">TypeScript</span>.
+                                Worked in a small outsourcing company as a Mid-Level PHP Developer, contributing to
+                                various smaller projects. Primarily worked with <span class="text-teal-400">PHP</span>,
+                                <span class="text-teal-400">JavaScript</span>, <span class="text-teal-400">jQuery</span>,
+                                <span class="text-teal-400">WordPress</span>, and <span
+                                    class="text-teal-400">MySQL</span>. Developed custom themes and plugins for
+                                WordPress, optimized performance, and ensured high-quality deliverables. Gained
+                                experience in both frontend and backend development, collaborating closely with clients
+                                to gather requirements and iterate on features based on feedback. Contributed to the
+                                maintenance and troubleshooting of existing sites, ensuring optimal functionality and
+                                user experience.
                             </p>
+
                         </li>
                         <!-- Timeline Item -->
                         <li class="mb-8 pl-6">
@@ -820,8 +1021,15 @@
                                 Kharkiv, Ukraine
                             </div>
                             <p class="mt-2 text-gray-300">
-                                Led the development of scalable backend systems using <span class="text-teal-400">Node.js</span>
-                                and <span class="text-teal-400">TypeScript</span>.
+                                Started as a Junior Software Engineer at a small
+                                outsourcing company, working primarily with <span class="text-teal-400">PHP</span> and
+                                the <span class="text-teal-400">CodeIgniter</span> framework. Developed <span
+                                    class="text-teal-400">UI</span> components using <span class="text-teal-400">JavaScript</span>
+                                and <span class="text-teal-400">jQuery</span>. Focused on creating <span
+                                    class="text-teal-400">APIs</span> to integrate with <span
+                                    class="text-teal-400">iOS</span> applications, ensuring smooth data exchange and
+                                efficient performance. Gained valuable experience in a small team, working on various
+                                aspects of the project, from backend development to frontend enhancements.
                             </p>
                         </li>
                     </ul>
