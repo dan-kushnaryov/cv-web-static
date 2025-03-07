@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +11,17 @@
                 const isSmallScreen = window.matchMedia('(max-width: 768px)');
 
                 const toggleFixedPosition = () => {
+                    if (!isSmallScreen.matches) return;
+
                     const scrollY = window.scrollY;
 
-                    if (isSmallScreen.matches && scrollY > 150) {
+                    if (scrollY > 1000) {
+                        titleContainer.style.opacity = 0;
+                    } else {
+                        titleContainer.style.opacity = 1;
+                    }
+
+                    if (scrollY > 150) {
                         titleContainer.classList.add('fixed-title-container');
                         titleContainer.classList.remove('text-3xl');
                     } else {
@@ -23,25 +31,55 @@
                 };
 
                 isSmallScreen.addEventListener('change', toggleFixedPosition);
-
                 window.addEventListener('scroll', toggleFixedPosition);
+            }
+            function setExperienceYears() {
+                const startYear = 2012;
+                const currentYear = new Date().getFullYear();
+                const experienceYears = currentYear - startYear;
+
+                document.querySelectorAll("[data-experience]").forEach(el => {
+                    el.textContent = experienceYears;
+                });
             }
 
             initTitleContainer();
+            setExperienceYears();
         });
     </script>
 </head>
 <body class="font-body leading-relaxed text-gray-200 md:overflow-hidden dark">
-<div class="flex flex-col md:flex-row min-h-screen min-w-[350px] mx-auto">
+<div class="relative flex flex-col md:flex-row min-h-screen min-w-[350px] mx-auto">
     <div class="relative flex flex-row h-full w-full min-w-[350px] md:basis-2/5 lg:basis-1/3 bg-zinc-950 shadow-sm shadow-gray-950">
         <!-- Background Wrapper -->
         <div class="absolute inset-0">
-            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-50"></div>
+            <div class="absolute inset-0 bg-[url('../public/cubes.png')] opacity-50"></div>
             <div class="absolute inset-0 bg-gradient-to-tr from-cyan-950/0 to-sky-950/60"></div>
         </div>
         <!-- Content -->
-        <div class="md:scrollbar-thin md:crollbar-thumb-gray-900 md:scrollbar-track-transparent md:overflow-y-auto md:h-screen relative z-10 w-full px-4 py-4 sm:px-12 md:px-6">
-            <div class="flex flex-col gap-6 max-w-xl mx-auto">
+        <div class="relative md:scrollbar-thin md:crollbar-thumb-gray-900 md:scrollbar-track-transparent md:overflow-y-auto md:h-screen z-10 w-full px-6 py-4">
+            <!-- Icons in the top-right corner -->
+            <div class="absolute top-4 right-6 flex gap-3">
+                <!-- GitHub -->
+                <a href="https://github.com/dan-kushnaryov" target="_blank" class="hover:text-teal-500 transition">
+                    <svg class="w-6 h-6 fill-current text-gray-400 hover:text-teal-500 transition-colors duration-500"
+                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.385.6.113.793-.258.793-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.754-1.333-1.754-1.089-.744.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.776.418-1.305.76-1.605-2.665-.304-5.466-1.334-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.523.116-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.292-1.552 3.3-1.23 3.3-1.23.652 1.653.24 2.873.118 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.805 5.624-5.475 5.92.43.372.81 1.102.81 2.222 0 1.606-.014 2.898-.014 3.293 0 .32.19.694.8.577 4.77-1.585 8.21-6.083 8.21-11.385 0-6.627-5.373-12-12-12z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/danweb" target="_blank"
+                   class="hover:text-teal-500 transition">
+                    <svg class="w-6 h-6 fill-current text-gray-400 hover:text-teal-500 transition-colors duration-500"
+                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M22.23 0H1.77C.79 0 0 .775 0 1.73v20.54C0 23.225.79 24 1.77 24h20.46c.98 0 1.77-.775 1.77-1.73V1.73C24 .775 23.21 0 22.23 0zM7.09 20.452H3.56V9h3.53v11.452zM5.325 7.652a2.043 2.043 0 1 1 0-4.085 2.043 2.043 0 0 1 0 4.085zM20.452 20.452h-3.53v-5.24c0-1.249-.025-2.857-1.746-2.857-1.747 0-2.015 1.364-2.015 2.776v5.32h-3.53V9h3.39v1.564h.048c.473-.89 1.632-1.826 3.363-1.826 3.594 0 4.257 2.364 4.257 5.435v6.279z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div id="profile" class="flex flex-col gap-6 mx-auto">
                 <!-- Avatar -->
                 <div class="flex flex-col gap-4 items-start">
                     <div class="w-40 h-40 rounded-full flex items-center justify-center overflow-hidden border-4 border-white">
@@ -66,7 +104,7 @@
                 <div class="flex flex-col gap-2 items-start">
                     <h2 class="text-gray-400 font-semibold uppercase">About</h2>
                     <p>
-                        <span class="text-white font-bold">Poland-based Senior Software Developer with 12+ years of experience</span><br/>
+                        <span class="text-white font-bold">Poland-based Senior Software Developer with <span data-experience></span>+ years of experience</span><br/>
                         specializing in backend systems, cloud solutions, and modern web technologies. Passionate about
                         clean code, innovation, and continuous learning.
                     </p>
@@ -74,7 +112,8 @@
                 <!-- Contacts -->
                 <div class="flex flex-col gap-2 items-start">
                     <h2 class="text-gray-400 font-semibold uppercase">Contacts</h2>
-                    <ul class="flex flex-col gap-1">
+                    <span id="skills"></span>
+                    <ul class="flex flex-col gap-2">
                         <li>
                             <a class="flex flex-row gap-2 items-center hover:text-teal-500 transition-colors duration-500"
                                href="mailto:dan.kushnaryov@gmail.com" target="_blank">
@@ -357,16 +396,17 @@
             </div>
         </div>
     </div>
-    <div class="w-full flex-grow md:basis-3/5 lg:basis-2/3 px-4 py-6 sm:px-6 bg-gray-950 md:scrollbar-thin md:scrollbar-thumb-gray-900 md:scrollbar-track-transparent md:overflow-y-auto md:h-screen">
+    <div class="relative scroll-smooth w-full flex-grow md:basis-3/5 lg:basis-2/3 p-6 bg-gray-950 md:scrollbar-thin md:scrollbar-thumb-gray-900 md:scrollbar-track-transparent md:overflow-y-auto md:h-screen">
         <div class="container mx-auto flex flex-col gap-6">
             <!-- Professional Summary -->
-            <div class="content-block">
+            <div id="professional-summary" class="content-block">
                 <h1 class="text-2xl font-bold text-white">Professional Summary</h1>
                 <p>
-                    I have 12+ years of experience in software development 👾, specializing in web programming,
+                    I have <span data-experience></span>+ years of experience in software development 👾, specializing in web programming,
                     testing, databases, continuous integration, and cloud services.
-                    I have contributed to various projects of different complexities, with a primary focus on <span
-                        class="text-teal-400">Node.js</span> applications using <span class="text-teal-400">TypeScript</span>
+                    I have contributed to various projects of different scales, with a primary focus on <span
+                        class="text-teal-400">Node.js</span> applications using <span
+                        class="text-teal-400">TypeScript</span>
                     and <span class="text-teal-400">JavaScript</span>.
                 </p>
                 <div class="border-t border-gray-700 my-6"></div>
@@ -380,19 +420,16 @@
                 </p>
                 <!--                    <div class="border-t border-gray-700 my-6"></div>-->
                 <p>
-                    I have hands-on experience with relational (<span class="text-teal-400">PostgreSQL</span>, <span
+                    I have experience with relational (<span class="text-teal-400">PostgreSQL</span>, <span
                         class="text-teal-400">MySQL</span>) and non-relational (<span
                         class="text-teal-400">MongoDB</span>) databases, applying best practices for efficient and
                     reliable data management.
                 </p>
                 <!--                    <div class="border-t border-gray-700 my-6"></div>-->
                 <p>
-                    While my expertise is backend-oriented, I’ve also expanded into UI development with <span
+                    While my primary focus is backend development, I have some experience with UI development using <span
                         class="text-teal-400">React</span>, <span class="text-teal-400">Redux</span>, <span
-                        class="text-teal-400">Redux Toolkit</span>
-                    and modern CSS techniques (<span class="text-teal-400">Flexbox</span>, <span
-                        class="text-teal-400">Grid</span>,
-                    <span class="text-teal-400">Tailwind CSS</span>).
+                        class="text-teal-400">Redux Toolkit</span> and modern CSS in various projects.
                 </p>
                 <div class="border-t border-gray-700 my-6"></div>
 
@@ -404,20 +441,15 @@
                     <li><span class="font-semibold">Microservices architecture</span> - Scalable and maintainable
                         system design.
                     </li>
-                    <li><span class="font-semibold">AWS services (ElasticSearch, CloudWatch)</span> - Cloud
+                    <li><span class="font-semibold">AWS</span> - Cloud
                         infrastructure, monitoring, and analytics.
                     </li>
                     <li><span class="font-semibold">Hexagonal Architecture, SOLID principles</span> - Clean,
                         maintainable, and testable code.
                     </li>
-                    <li><span class="font-semibold">React, Redux, modern CSS (Flexbox, Grid, Tailwind CSS)</span> -
-                        Responsive, user-friendly front-end development.
-                    </li>
-                    <li><span class="font-semibold">AWS Certified Cloud Practitioner</span> - Cloud expertise and
-                        best practices.
-                    </li>
+                    <li><span class="font-semibold">React, Redux, modern CSS (Flexbox, Grid, Tailwind)</span> – Scalable, maintainable, and user-friendly front-end development.</li>
+                    <li><span class="font-semibold">AWS Certified Cloud Practitioner</span> - Fundamental cloud expertise and best practices.</li>
                 </ul>
-
                 <div class="border-t border-gray-700 my-6"></div>
                 <p>
                     I am passionate about taking on challenges, writing clean and maintainable code, and
@@ -427,7 +459,7 @@
             </div>
 
             <!-- Professional Experience -->
-            <div class="content-block">
+            <div id="professional-experience" class="content-block">
                 <h1 class="text-2xl font-bold text-white">Professional Experience</h1>
                 <ul class="relative border-l-2 border-gray-700">
                     <!-- Timeline Item -->
@@ -511,7 +543,8 @@
                             working with multiple <span class="text-teal-400">Node.js frameworks</span> such as
                             <span class="text-teal-400">Feathers</span>,
                             <span class="text-teal-400">Express</span>, and <span
-                                class="text-teal-400">Inversify</span>. Served as a <span class="font-bold">Tech Lead</span>
+                                class="text-teal-400">Inversify</span>. Served as a <span
+                                class="font-bold">Tech Lead</span>
                             on several projects, overseeing the development process and mentoring team members.
                             Collaborated with distributed teams, and
                             played an active role in communication with both clients and internal team members.
@@ -630,7 +663,8 @@
                             Started as a Junior Software Engineer at a small
                             outsourcing company, working primarily with <span class="text-teal-400">PHP</span> and
                             the <span class="text-teal-400">CodeIgniter</span> framework. Developed <span
-                                class="text-teal-400">UI</span> components using <span class="text-teal-400">JavaScript</span>
+                                class="text-teal-400">UI</span> components using <span
+                                class="text-teal-400">JavaScript</span>
                             and <span class="text-teal-400">jQuery</span>. Focused on creating <span
                                 class="text-teal-400">APIs</span> to integrate with <span
                                 class="text-teal-400">iOS</span> applications, ensuring smooth data exchange and
@@ -642,7 +676,7 @@
             </div>
 
             <!-- Projects -->
-            <div class="content-block-projects">
+            <div id="projects" class="content-block-projects">
                 <h1 class="text-2xl font-bold text-white ml-6 lg:ml-0">Featured Projects</h1>
                 <div id="accordion-color" data-accordion="collapse"
                      data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
@@ -668,7 +702,8 @@
                                 performance while streamlining transaction flows and managing compliance. Built with
                                 <span class="text-teal-400">Node.js</span>, <span
                                     class="text-teal-400">TypeScript</span>, <span
-                                    class="text-teal-400">NestJS</span>, and using <span class="text-teal-400">MongoDB</span>
+                                    class="text-teal-400">NestJS</span>, and using <span
+                                    class="text-teal-400">MongoDB</span>
                                 and <span class="text-teal-400">PostgreSQL</span> for storage, the system is
                                 containerized with <span class="text-teal-400">Docker</span> and orchestrated using
                                 <span class="text-teal-400">Kubernetes</span>. For CI/CD, <span
@@ -738,11 +773,14 @@
                                 search and filtering capabilities. It includes email notifications for new listings
                                 and integrates with <span class="text-teal-400">Google Maps</span> for an enhanced
                                 user experience. Hosted on <span class="text-teal-400">AWS</span>, the system uses a
-                                microservices architecture, incorporating services like <span class="text-teal-400">EC2</span>,
-                                <span class="text-teal-400">RDS for PostgreSQL</span>, <span class="text-teal-400">S3</span>,
+                                microservices architecture, incorporating services like <span
+                                    class="text-teal-400">EC2</span>,
+                                <span class="text-teal-400">RDS for PostgreSQL</span>, <span
+                                    class="text-teal-400">S3</span>,
                                 <span class="text-teal-400">SQS/SNS</span>, <span
                                     class="text-teal-400">Cognito</span>, <span
-                                    class="text-teal-400">Elasticsearch</span>, and <span class="text-teal-400">Lambda</span>.
+                                    class="text-teal-400">Elasticsearch</span>, and <span
+                                    class="text-teal-400">Lambda</span>.
                                 Integration with <span class="text-teal-400">Salesforce CRM</span> ensures efficient
                                 user synchronization between the website and CRM.
                             </p>
@@ -772,10 +810,10 @@
                                 <li><span class="font-semibold">Testing:</span> Mocha, Chai, Sinon</li>
                                 <li><span class="font-semibold">DevOps:</span> Jenkins, Docker, Docker Compose</li>
                                 <li><span class="font-semibold">Database:</span> PostgreSQL</li>
-                                <li><span class="font-semibold">AWS Services:</span> EC2, S3, SQS/SNS, Lambda,
+                                <li><span class="font-semibold">AWS:</span> EC2, S3, SQS/SNS, Lambda,
                                     Elasticsearch, CloudWatch, Cognito
                                 </li>
-                                <li><span class="font-semibold">CRM Integration:</span> Apex for Salesforce API</li>
+                                <li><span class="font-semibold">Salesforce Integration:</span> Apex, REST API</li>
                             </ul>
                             <div class="border-t border-gray-700 my-6"></div>
 
@@ -851,7 +889,7 @@
                                 <li><span class="font-semibold">DevOps:</span> CircleCI, Kubernetes, Docker, Docker
                                     Compose
                                 </li>
-                                <li><span class="font-semibold">Cloud & Messaging:</span> AWS (S3, SQS/SNS)</li>
+                                <li><span class="font-semibold">AWS:</span> S3, SQS/SNS</li>
                             </ul>
 
                             <div class="border-t border-gray-700 my-6"></div>
@@ -937,8 +975,7 @@
                                 <li><span class="font-semibold">Additional Technologies:</span> PHP, Yii2, Active
                                     Record, PostgreSQL
                                 </li>
-                                <li><span class="font-semibold">Third-party Integrations:</span> AWS, Dropbox,
-                                    Slack, Pusher, RabbitMQ, AWS SQS/S3
+                                <li><span class="font-semibold">Third-party Integrations:</span> AWS (SQS, S3), Dropbox, Slack, Pusher, RabbitMQ
                                 </li>
                             </ul>
 
@@ -1034,8 +1071,93 @@
             </div>
         </div>
     </div>
-</div>
+    <div class="fixed bottom-2 left-1/2 -translate-x-1/2 bg-gray-800 shadow-md z-50 rounded-xl md:hidden">
+        <nav class="flex justify-center gap-6 p-4">
+            <!-- Profile -->
+            <a href="#profile" class="group relative text-gray-400 hover:text-cyan-400 transition duration-300">
+                <svg class="w-6 h-6 stroke-gray-400 group-hover:stroke-cyan-400 transition duration-300"
+                     viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M12.12 12.78C12.05 12.77 11.96 12.77 11.88 12.78C10.12 12.72 8.71997 11.28 8.71997 9.50998C8.71997 7.69998 10.18 6.22998 12 6.22998C13.81 6.22998 15.28 7.69998 15.28 9.50998C15.27 11.28 13.88 12.72 12.12 12.78Z"
+                              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M18.74 19.3801C16.96 21.0101 14.6 22.0001 12 22.0001C9.40001 22.0001 7.04001 21.0101 5.26001 19.3801C5.36001 18.4401 5.96001 17.5201 7.03001 16.8001C9.77001 14.9801 14.25 14.9801 16.97 16.8001C18.04 17.5201 18.64 18.4401 18.74 19.3801Z"
+                              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+                <!-- Tooltip -->
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 scale-90 transition duration-300 ease-out pointer-events-none group-hover:opacity-100 group-hover:scale-100">
+        Profile
+    </span>
+            </a>
 
+            <!-- Skills -->
+            <a href="#skills" class="group relative text-gray-400 hover:text-cyan-400 transition duration-300">
+                <svg class="w-6 h-6 stroke-gray-400 group-hover:stroke-cyan-400 transition duration-300"
+                     viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_iconCarrier">
+                        <path fill-rule="evenodd" clip-rule="evenodd" stroke-width="1.5"
+                              d="M12.7848 0.449982C13.8239 0.449982 14.7167 1.16546 14.9122 2.15495L14.9991 2.59495C15.3408 4.32442 17.1859 5.35722 18.9016 4.7794L19.3383 4.63233C20.3199 4.30175 21.4054 4.69358 21.9249 5.56605L22.7097 6.88386C23.2293 7.75636 23.0365 8.86366 22.2504 9.52253L21.9008 9.81555C20.5267 10.9672 20.5267 13.0328 21.9008 14.1844L22.2504 14.4774C23.0365 15.1363 23.2293 16.2436 22.7097 17.1161L21.925 18.4339C21.4054 19.3064 20.3199 19.6982 19.3382 19.3676L18.9017 19.2205C17.1859 18.6426 15.3408 19.6754 14.9991 21.405L14.9122 21.845C14.7167 22.8345 13.8239 23.55 12.7848 23.55H11.2152C10.1761 23.55 9.28331 22.8345 9.08781 21.8451L9.00082 21.4048C8.65909 19.6754 6.81395 18.6426 5.09822 19.2205L4.66179 19.3675C3.68016 19.6982 2.59465 19.3063 2.07505 18.4338L1.2903 17.1161C0.770719 16.2436 0.963446 15.1363 1.74956 14.4774L2.09922 14.1844C3.47324 13.0327 3.47324 10.9672 2.09922 9.8156L1.74956 9.52254C0.963446 8.86366 0.77072 7.75638 1.2903 6.8839L2.07508 5.56608C2.59466 4.69359 3.68014 4.30176 4.66176 4.63236L5.09831 4.77939C6.81401 5.35722 8.65909 4.32449 9.00082 2.59506L9.0878 2.15487C9.28331 1.16542 10.176 0.449982 11.2152 0.449982H12.7848ZM12 15.3C13.8225 15.3 15.3 13.8225 15.3 12C15.3 10.1774 13.8225 8.69998 12 8.69998C10.1774 8.69998 8.69997 10.1774 8.69997 12C8.69997 13.8225 10.1774 15.3 12 15.3Z"></path>
+                    </g>
+                </svg>
+                <!-- Tooltip -->
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 scale-90 transition duration-300 ease-out pointer-events-none group-hover:opacity-100 group-hover:scale-100">
+        Skills
+    </span>
+            </a>
+
+            <!-- Professional Summary -->
+            <a href="#professional-summary"
+               class="group relative text-gray-400 hover:text-cyan-400 transition duration-300">
+                <svg class="w-6 h-6 stroke-gray-400 group-hover:stroke-cyan-400 transition duration-300"
+                     viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                     stroke-width="80">
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M1706.235 1807.059H350.941V112.94h903.53v451.765h451.764v1242.353Zm-338.823-1670.74 315.443 315.447h-315.443V136.32Zm402.182 242.487L1440.372 49.58C1408.296 17.62 1365.717 0 1320.542 0H238v1920h1581.175V498.635c0-45.176-17.618-87.755-49.58-119.83ZM576.823 1242.353h790.589v-112.94H576.823v112.94Zm0-451.765h903.53V677.647h-903.53v112.941Zm0 677.647h451.765v-112.941H576.823v112.941Zm0-451.764h677.648V903.53H576.823v112.941Zm0-451.765h451.765V451.765H576.823v112.941Z"
+                              stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+                <!-- Tooltip -->
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 scale-90 transition duration-300 ease-out pointer-events-none group-hover:opacity-100 group-hover:scale-100">
+        Summary
+    </span>
+            </a>
+
+            <!-- Professional Experience -->
+            <a href="#professional-experience"
+               class="group relative text-gray-400 hover:text-cyan-400 transition duration-300">
+                <svg class="w-6 h-6 stroke-gray-400 group-hover:stroke-cyan-400 transition duration-300"
+                     viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                     stroke-width="40">
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M192 128v704h384V128H192zm-32-64h448a32 32 0 0 1 32 32v768a32 32 0 0 1-32 32H160a32 32 0 0 1-32-32V96a32 32 0 0 1 32-32z"></path>
+                        <path d="M256 256h256v64H256v-64zm0 192h256v64H256v-64zm0 192h256v64H256v-64zm384-128h128v64H640v-64zm0 128h128v64H640v-64zM64 832h896v64H64v-64z"></path>
+                        <path d="M640 384v448h192V384H640zm-32-64h256a32 32 0 0 1 32 32v512a32 32 0 0 1-32 32H608a32 32 0 0 1-32-32V352a32 32 0 0 1 32-32z"></path>
+                    </g>
+                </svg>
+                <!-- Tooltip -->
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 scale-90 transition duration-300 ease-out pointer-events-none group-hover:opacity-100 group-hover:scale-100">
+        Experience
+    </span>
+            </a>
+
+            <!-- Projects -->
+            <a href="#projects" class="group relative text-gray-400 hover:text-cyan-400 transition duration-300">
+                <svg class="w-6 h-6 fill-gray-400 group-hover:fill-cyan-400 transition duration-300" viewBox="0 -64 640 640" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M384 320H256c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM192 32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v128c0 17.67 14.33 32 32 32h95.72l73.16 128.04C211.98 300.98 232.4 288 256 288h.28L192 175.51V128h224V64H192V32zM608 0H480c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32z"></path>
+                </svg>
+                <!-- Tooltip -->
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 scale-90 transition duration-300 ease-out pointer-events-none group-hover:opacity-100 group-hover:scale-100">
+        Projects
+    </span>
+            </a>
+
+
+
+        </nav>
+    </div>
+</div>
 <script src="/node_modules/flowbite/dist/flowbite.js"></script>
 </body>
 </html>
