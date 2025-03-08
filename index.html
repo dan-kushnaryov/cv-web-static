@@ -8,7 +8,8 @@
     <meta name="robots" content="index, follow">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./output.css">
+    <link rel="preload" href="./output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./output.css"></noscript>
 
     <!-- Open Graph -->
     <meta property="og:title" content="Danil Kushnaryov - Senior Software Developer">
