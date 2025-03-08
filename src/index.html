@@ -1,53 +1,61 @@
 <!doctype html>
 <html class="scroll-smooth">
 <head>
+    <title>Danil Kushnaryov - Senior Software Developer</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../dist/output.css" rel="stylesheet">
+    <meta name="description" content="Experienced backend developer specializing in Node.js, cloud solutions, and modern web technologies.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preload" href="../dist/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../dist/output.css"></noscript>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Danil Kushnaryov - Senior Software Developer">
+    <meta property="og:description" content="Experienced backend developer specializing in Node.js, cloud solutions, and modern web technologies.">
+    <meta property="og:image" content="preview.jpg">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Danil Kushnaryov",
+            "jobTitle": "Senior Software Developer",
+            "sameAs": [
+                "https://github.com/dan-kushnaryov",
+                "https://www.linkedin.com/in/danweb"
+            ]
+        }
+    </script>
+
+    <!-- <link rel="canonical" href="https://yourwebsite.com"> -->
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            function initTitleContainer() {
-                const titleContainer = document.getElementById('title-container');
-                const isSmallScreen = window.matchMedia('(max-width: 768px)');
+            const titleContainer = document.getElementById('title-container');
+            const isSmallScreen = window.matchMedia('(max-width: 768px)');
 
-                const toggleFixedPosition = () => {
-                    if (!isSmallScreen.matches) return;
+            const toggleFixedPosition = () => {
+                if (!isSmallScreen.matches) return;
+                const scrollY = window.scrollY;
+                titleContainer.style.opacity = scrollY > 1000 ? 0 : 1;
+                titleContainer.classList.toggle('fixed-title-container', scrollY > 150);
+                titleContainer.classList.toggle('text-3xl', scrollY <= 150);
+            };
 
-                    const scrollY = window.scrollY;
+            isSmallScreen.addEventListener('change', toggleFixedPosition);
+            window.addEventListener('scroll', toggleFixedPosition);
 
-                    if (scrollY > 1000) {
-                        titleContainer.style.opacity = 0;
-                    } else {
-                        titleContainer.style.opacity = 1;
-                    }
-
-                    if (scrollY > 150) {
-                        titleContainer.classList.add('fixed-title-container');
-                        titleContainer.classList.remove('text-3xl');
-                    } else {
-                        titleContainer.classList.remove('fixed-title-container');
-                        titleContainer.classList.add('text-3xl');
-                    }
-                };
-
-                isSmallScreen.addEventListener('change', toggleFixedPosition);
-                window.addEventListener('scroll', toggleFixedPosition);
-            }
-            function setExperienceYears() {
-                const startYear = 2012;
-                const currentYear = new Date().getFullYear();
-                const experienceYears = currentYear - startYear;
-
-                document.querySelectorAll("[data-experience]").forEach(el => {
-                    el.textContent = experienceYears;
-                });
-            }
-
-            initTitleContainer();
-            setExperienceYears();
+            document.querySelectorAll("[data-experience]").forEach(el => el.textContent = new Date().getFullYear() - 2012);
         });
     </script>
 </head>
+
+
 <body class="font-body leading-relaxed text-gray-200 md:overflow-hidden dark">
 <div class="relative flex flex-col md:flex-row min-h-screen min-w-[350px] mx-auto">
     <div class="relative flex flex-row h-full w-full min-w-[350px] md:basis-2/5 lg:basis-1/3 bg-zinc-950 shadow-sm shadow-gray-950">
@@ -61,7 +69,7 @@
             <!-- Icons in the top-right corner -->
             <div class="absolute top-4 right-6 flex gap-3">
                 <!-- GitHub -->
-                <a href="https://github.com/dan-kushnaryov" target="_blank" class="hover:text-teal-500 transition">
+                <a href="https://github.com/dan-kushnaryov" aria-label="GitHub profile" role="button" target="_blank" class="hover:text-teal-500 transition">
                     <svg class="w-6 h-6 fill-current text-gray-400 hover:text-teal-500 transition-colors duration-500"
                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path fill-rule="evenodd"
@@ -70,7 +78,7 @@
                     </svg>
                 </a>
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/danweb" target="_blank"
+                <a href="https://www.linkedin.com/in/danweb" aria-label="LinkedIn profile" role="button" target="_blank"
                    class="hover:text-teal-500 transition">
                     <svg class="w-6 h-6 fill-current text-gray-400 hover:text-teal-500 transition-colors duration-500"
                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -83,7 +91,7 @@
                 <!-- Avatar -->
                 <div class="flex flex-col gap-4 items-start">
                     <div class="w-40 h-40 rounded-full flex items-center justify-center overflow-hidden border-4 border-white">
-                        <img src="../public/avatar.jpeg" alt="Danil Kushnarov" class="transform scale-125">
+                        <img src="../img/avatar.jpeg" alt="Danil Kushnarov" loading="lazy" class="transform scale-125">
                     </div>
                     <div class="flex flex-row items-center gap-1.5 text-3xl transition-all duration-300"
                          id="title-container">
@@ -469,7 +477,7 @@
                         <div class="flex flex-row items-center gap-3 mt-2">
                             <div class="flex-none">
                                 <img
-                                        src="../public/companies/paydock_logo.jpeg"
+                                        src="../img/companies/paydock_logo.jpeg"
                                         alt="Paydock Company"
                                         class="w-10 h-10 shadow-md border border-gray-700 object-cover"
                                 />
@@ -514,7 +522,7 @@
                         <div class="flex flex-row items-center gap-3 mt-2">
                             <div class="flex-none">
                                 <img
-                                        src="../public/companies/softserve_logo.png"
+                                        src="../img/companies/softserve_logo.png"
                                         alt="SoftServe Company"
                                         class="w-10 h-10 shadow-md border border-gray-700 object-cover"
                                 />
@@ -561,7 +569,7 @@
                         <div class="flex flex-row items-center gap-3 mt-2">
                             <div class="flex-none">
                                 <img
-                                        src="../public/companies/mrc_develop_logo.jpeg"
+                                        src="../img/companies/mrc_develop_logo.jpeg"
                                         alt="MRC Develop Company"
                                         class="w-10 h-10 shadow-md border border-gray-700 object-cover"
                                 />
@@ -600,7 +608,7 @@
                         <div class="flex flex-row items-center gap-3 mt-2">
                             <div class="flex-none">
                                 <img
-                                        src="../public/companies/codetiburon_logo.jpeg"
+                                        src="../img/companies/codetiburon_logo.jpeg"
                                         alt="CodeTiburon Company"
                                         class="w-10 h-10 shadow-md border border-gray-700 object-cover"
                                 />
@@ -640,7 +648,7 @@
                         <div class="flex flex-row items-center gap-3 mt-2">
                             <div class="flex-none">
                                 <img
-                                        src="../public/companies/polar_b_logo.jpeg"
+                                        src="../img/companies/polar_b_logo.jpeg"
                                         alt="Polar-B Company"
                                         class="w-10 h-10 shadow-md border border-gray-700 object-cover"
                                 />

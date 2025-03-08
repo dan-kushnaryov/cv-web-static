@@ -4,7 +4,9 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "dev:build-css": "npm run build-css -- --watch",
+    "prod:build-css": "npm run build-css -- --minify"
   },
   "keywords": [],
   "author": "",
