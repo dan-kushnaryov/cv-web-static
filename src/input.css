@@ -42,6 +42,10 @@
     }
 }
 
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
 svg {
     visibility: hidden;
     opacity: 0;
