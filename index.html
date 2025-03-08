@@ -7,15 +7,26 @@
     <meta name="description" content="Experienced backend developer specializing in Node.js, cloud solutions, and modern web technologies.">
     <meta name="robots" content="index, follow">
 
+    <!-- Favicons -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="preload" href="./output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="./output.css"></noscript>
 
-    <!-- Open Graph -->
+    <!-- Preloading CSS -->
+    <link rel="preload" href="./output.css" as="style">
+    <link rel="stylesheet" href="./output.css">
+
+    <!-- Font Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito:wght@200..1000&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito:wght@200..1000&display=swap">
+    </noscript>
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Danil Kushnaryov - Senior Software Developer">
     <meta property="og:description" content="Experienced backend developer specializing in Node.js, cloud solutions, and modern web technologies.">
     <meta property="og:image" content="preview.jpg">
-    <meta property="og:url" content="">
+    <meta property="og:url" content="https://dan-kushnaryov.github.io/cv-web-static">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Schema.org JSON-LD -->
@@ -32,11 +43,12 @@
         }
     </script>
 
-    <!-- <link rel="canonical" href="https://yourwebsite.com"> -->
-
-    <script>
+    <!-- JS Optimization -->
+    <script defer>
         document.addEventListener('DOMContentLoaded', () => {
             const titleContainer = document.getElementById('title-container');
+            if (!titleContainer) return;
+
             const isSmallScreen = window.matchMedia('(max-width: 768px)');
 
             const toggleFixedPosition = () => {
@@ -50,7 +62,10 @@
             isSmallScreen.addEventListener('change', toggleFixedPosition);
             window.addEventListener('scroll', toggleFixedPosition);
 
+            // Update experience dynamically
             document.querySelectorAll("[data-experience]").forEach(el => el.textContent = new Date().getFullYear() - 2012);
+
+            document.documentElement.classList.add('loaded');
         });
     </script>
 </head>

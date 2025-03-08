@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,69 +23,102 @@
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
-        height: 0;
+        opacity: 0;
     }
     to {
         transform: translateY(0);
-        height: auto;
+        opacity: 1;
     }
 }
 
 @keyframes slideUp {
     from {
         transform: translateY(0);
-        height: auto;
+        opacity: 1;
     }
     to {
         transform: translateY(-100%);
-        height: 0;
+        opacity: 0;
     }
 }
 
-.skill {
-    @apply flex flex-col gap-0.5 rounded-lg items-center hover:scale-110 transition-transform duration-500 bg-slate-900/60 p-3 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/70 hover:bg-slate-900/100 text-sm font-semibold;
+svg {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
-.skill-icon {
-    @apply w-10 h-10 mb-2 opacity-75 group-hover:opacity-100 transition-opacity duration-500;
+.loaded svg {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
 }
 
-.language {
-    @apply flex flex-col items-center justify-center p-1 font-bold;
-}
+@layer components {
+    .skill {
+        @apply flex flex-col gap-0.5 rounded-lg items-center
+        hover:scale-110 transition-transform duration-500
+        bg-slate-900/60 p-3 shadow-lg shadow-teal-500/50
+        hover:shadow-teal-500/70 hover:bg-slate-900/100
+        text-sm font-semibold;
+    }
 
-.fixed-title-container {
-    @apply fixed left-0 top-0 pt-2 pb-2 pl-4 z-10 border-b border-dotted border-teal-600/60 bg-gradient-to-r from-gray-900/95 to-teal-800/95 w-full shadow-md shadow-gray-950/50;
-}
+    .skill-icon {
+        @apply w-10 h-10 mb-2 opacity-75
+        group-hover:opacity-100 transition-opacity duration-500;
+    }
 
-.fixed-title-container > h1 {
-    @apply text-xl text-gray-200;
-}
+    .language {
+        @apply flex flex-col items-center justify-center p-1 font-bold;
+    }
 
-.fixed-title-container > svg {
-    @apply w-7 h-7;
-}
+    .fixed-title-container {
+        @apply fixed left-0 top-0 pt-2 pb-2 pl-4 z-10
+        border-b border-dotted border-teal-600/60
+        bg-gradient-to-r from-gray-900/95 to-teal-800/95
+        w-full shadow-md shadow-gray-950/50;
+    }
 
-.fixed-title-container svg {
-    animation: bounce 0.7s ease-out;
-}
+    .fixed-title-container > h1 {
+        @apply text-xl text-gray-200;
+    }
 
-.timeline-point {
-    @apply absolute left-[-9px] w-4 h-4 bg-teal-400 rounded-full border-2 border-gray-900;
-}
+    .fixed-title-container > svg {
+        @apply w-7 h-7;
+    }
 
-.content-block {
-    @apply border border-solid border-gray-700 p-6 bg-gray-900 rounded-lg text-gray-200 font-light space-y-6 shadow-lg shadow-teal-500/50;
-}
+    .fixed-title-container svg {
+        animation: bounce 0.7s ease-out;
+    }
 
-.content-block-projects {
-    @apply border border-solid border-gray-700 py-6 px-0 lg:px-6 bg-gray-900 rounded-lg text-gray-200 font-light space-y-6 shadow-lg shadow-teal-500/50;
-}
+    .timeline-point {
+        @apply absolute left-[-9px] w-4 h-4 bg-teal-400
+        rounded-full border-2 border-gray-900;
+    }
 
-.project-menu-item-button {
-    @apply flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border-t lg:border-l lg:border-r border-gray-200 focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-500/50 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3;
-}
+    .content-block {
+        @apply border border-solid border-gray-700 p-6 bg-gray-900
+        rounded-lg text-gray-200 font-light space-y-6
+        shadow-lg shadow-teal-500/50;
+    }
 
-.common-list {
-    @apply list-disc list-inside pl-0 lg:pl-2.5 text-gray-200 space-y-3;
+    .content-block-projects {
+        @apply border border-solid border-gray-700 py-6 px-0 lg:px-6
+        bg-gray-900 rounded-lg text-gray-200 font-light space-y-6
+        shadow-lg shadow-teal-500/50;
+    }
+
+    .project-menu-item-button {
+        @apply flex items-center justify-between w-full p-5 font-medium
+        rtl:text-right text-gray-500 border-t lg:border-l lg:border-r
+        border-gray-200 focus:ring-2 focus:ring-blue-200
+        dark:focus:ring-teal-500/50 dark:border-gray-700 dark:text-gray-400
+        hover:bg-blue-100 dark:hover:bg-gray-800 gap-3;
+    }
+
+    .common-list {
+        @apply list-disc list-inside pl-0 lg:pl-2.5
+        text-gray-200 space-y-3;
+    }
 }
